@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
+    <script src="myscript.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Movie Seat Booking</title>
   </head>
   <body>
+    <div class="test"></div>
     <div class="movie-container">
       <label>Pick a movie:</label>
-      <select id="movie">
+      <select id="movie" onchange="changetheme()">
         <option value="10">Avengers: Endgame ($10)</option>
         <option value="12">Joker ($12)</option>
         <option value="8">Toy Story 4 ($8)</option>
@@ -32,9 +35,12 @@
         <small>Occupied</small>
       </li>
     </ul>
-
+    <div id="imgcontainer">
+      <img class="images" src="aw.jpg">
+      <img class="images" src="aw2.jpg">
+    </div>
     <div class="container">
-      <div class="screen"></div>
+      <div id="screen"></div>
 
       <div class="row">
         <div class="seat"></div>
@@ -104,6 +110,33 @@
         >0</span
       >
     </p>
+
+    <div id="ajaxArea">
+      <button id="bestellung" onclick="validator()">Get tickets!</button>
+      <p>Here you get a new picture!</p>
+    </div>
+    <h1 class="a">kefjenf</h1>
+    <form class="bestellformular" name="bestellformular" action="">
+      <h3>Ihre persönlichen Daten:</h3>
+      <label for="vorname">Vorname:</label>
+      <input name="vorname" placeholder="Max"></input>
+      <label for="nachname">Nachname:</label>
+      <input name="nachname" placeholder="Mustermann"></input>
+      <label for="email">E-Mail:</label>
+      <input name="email" placeholder="MaxMustermann@mail.de"></input>
+      <label for="telefon">Telefon:</label> 
+      <input name="telefon" placeholder="012345"></input>
+      <h3>Wählen Sie Ihren Film:</h3>
+      <select class="filmlist">
+        <option>Avengers: Endgame</option>
+        <option>Joker</option>
+        <option>Toy Story 4</option>
+        <option>The Lion King</option>
+      </select>
+      <div id="game"></div>
+      <input type="submit" value="Jetzt bestellen!" id="ok"></input>
+    </form>
+    
 
     <script src="script.js"></script>
   </body>

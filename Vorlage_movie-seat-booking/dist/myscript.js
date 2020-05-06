@@ -1,15 +1,14 @@
 "use strict";
-exports.__esModule = true;
 function changetheme() {
-    var movieSlct = document.getElementById('movie');
+    let movieSlct = document.getElementById('movie');
     var slectedMovie = movieSlct.options[movieSlct.selectedIndex].value;
     parseInt(slectedMovie);
     if (slectedMovie == 10) {
         //zählt runter bis start
-        var token;
+        var token; //NodeJS.timeout;
         var area = document.getElementById("test");
         var i = 10;
-        token = setInterval(function () { return timer; }, 1000);
+        token = setInterval(() => timer, 1000);
         function timer() {
             if (i <= 0) {
                 clearInterval(token);
@@ -22,9 +21,9 @@ function changetheme() {
         }
         function changeStyle() {
             //sets layout
-            var screen = document.getElementById("screen");
-            var movie = document.getElementById("movie");
-            var button = document.getElementById("bestellung");
+            let screen = document.getElementById("screen");
+            let movie = document.getElementById("movie");
+            let button = document.getElementById("bestellung");
             screen.style.backgroundImage = "url(./avengers_screen.gif)";
             movie.style.color = "black";
             movie.style.background = "purple";
@@ -32,12 +31,13 @@ function changetheme() {
             button.style.background = "purple";
         }
     }
+    //interface möglich!!
     else if (slectedMovie == 12) {
         //zählt runter bis start
         var token;
         var area = document.getElementById("test");
         var i = 10;
-        token = setInterval(function () { return timer; }, 1000);
+        token = setInterval(() => timer, 1000);
         function timer() {
             if (i <= 0) {
                 clearInterval(token);
@@ -50,9 +50,9 @@ function changetheme() {
         }
         function changeStyle() {
             //sets layout
-            var screen = document.getElementById("screen");
-            var movie = document.getElementById("movie");
-            var button = document.getElementById("bestellung");
+            let screen = document.getElementById("screen");
+            let movie = document.getElementById("movie");
+            let button = document.getElementById("bestellung");
             screen.style.backgroundImage = "url(./joker.gif)";
             movie.style.color = "white";
             movie.style.background = "green";
@@ -64,7 +64,7 @@ function changetheme() {
         var token;
         var area = document.getElementById("test");
         var i = 10;
-        token = setInterval(function () { return timer; }, 1000);
+        token = setInterval(() => timer, 1000);
         function timer() {
             if (i <= 0) {
                 clearInterval(token);
@@ -77,9 +77,9 @@ function changetheme() {
         }
         function changeStyle() {
             //sets layout
-            var screen = document.getElementById("screen");
-            var movie = document.getElementById("movie");
-            var button = document.getElementById("bestellung");
+            let screen = document.getElementById("screen");
+            let movie = document.getElementById("movie");
+            let button = document.getElementById("bestellung");
             screen.style.backgroundImage = "url(./ts4.gif)";
             movie.style.color = "white";
             movie.style.background = "red";
@@ -91,7 +91,7 @@ function changetheme() {
         var token;
         var area = document.getElementById("test");
         var i = 10;
-        token = setInterval(function () { return timer; }, 1000);
+        token = setInterval(() => timer, 1000);
         function timer() {
             if (i <= 0) {
                 clearInterval(token);
@@ -104,9 +104,9 @@ function changetheme() {
         }
         function changeStyle() {
             //sets layout
-            var screen = document.getElementById("screen");
-            var movie = document.getElementById("movie");
-            var button = document.getElementById("bestellung");
+            let screen = document.getElementById("screen");
+            let movie = document.getElementById("movie");
+            let button = document.getElementById("bestellung");
             screen.style.backgroundImage = "url(./lion.gif)";
             movie.style.color = "black";
             movie.style.background = "orange";
@@ -147,16 +147,17 @@ function validator() {
             numberRow[3] = 4;
             numberRow[4] = 5;
             numberRow[5] = 6;
+            //ändern
             i = Math.floor(Math.random() * 6) + 1;
-            var chanceToWin = new Promise(function (resolve, reject) {
-                if (numberRow[i] > 4) {
+            var chanceToWin = new Promise((resolve, reject) => {
+                if (numberRow[i] > 2) {
                     textArea.innerHTML += '<h4>' + numberRow[i] + '</h4>';
                     won = alert("Congratulation. You've won. Look at the Price. It's now 50% off.");
                     console.log("The number is: " + numberRow[i]);
                     resolve(won);
                 }
                 else {
-                    var reason = void 0;
+                    let reason;
                     textArea.innerHTML += '<h4>' + numberRow[i] + '</h4>';
                     won = alert("Sorry You've lost");
                     console.log("The number is: " + numberRow[i]);
@@ -167,7 +168,8 @@ function validator() {
             runGame = function () {
                 chanceToWin.then(function (fulfilled) {
                     alert(fulfilled);
-                })["catch"](function (error) {
+                })
+                    .catch(function (error) {
                     alert(error.message);
                 });
             };

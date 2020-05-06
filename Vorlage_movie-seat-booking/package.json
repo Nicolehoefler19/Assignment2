@@ -1,0 +1,16 @@
+{
+    "name": "movie_seat_booking",
+    "version": "1.0.0",
+    "description": "my second assignment",
+    "main": "myscript.js",
+    "contributors": [
+        "Johannes Dienst <info@johannesdienst.net>"
+    ],
+    "devDependencies": {
+      "browser-sync": "^2.17.6"
+      },
+      "scripts": {
+      "serve": "browser-sync start --config bs-config.js"
+      },
+    "license": "MIT"
+  }
